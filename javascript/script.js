@@ -56,6 +56,8 @@ $('.submit-plan').click(function(e){
   let email = $('#e-mail').val();
   let role = $('.role:checked').val()
 
+  $('.submit-plan').attr('disabled', true)
+
 
   $.ajax({
     url: `https://rehboxhealth.herokuapp.com/v1/join-waitlist`,
@@ -63,6 +65,7 @@ $('.submit-plan').click(function(e){
     data: {fullname, email, role},
     success: function(data){
       $('.register').trigger("reset")
+      $('.submit-plan').attr('disabled', false)
       success(data.message)
     },
     error: function(jqXHR, exception) {
