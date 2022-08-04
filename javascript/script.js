@@ -28,3 +28,62 @@ contactModal.addEventListener("click", () => {
 });
 
 exitContact.addEventListener("click", exitContactHandler);
+
+/* Toastr Notification */
+function success(msg){
+    toastr.success(msg, 'Notification', {timeOut: 10000, closeButton: true, progressBar: true})
+}
+
+function error(msg){
+  toastr.error(msg, 'Error', {timeOut: 10000, closeButton: true, progressBar: true})
+}
+
+function warning(msg){
+  toastr.warning(msg, 'Warning', {timeOut: 10000, closeButton: true, progressBar: true})
+}
+
+function info(msg){
+  toastr.info(msg, 'Info', {timeOut: 10000, closeButton: true, progressBar: true})
+}
+/* */
+
+/* Registration */
+
+$('.submit-plan').click(function(e){
+  e.preventDefault();
+
+  let fullname = $('#name').val();
+  let email = $('#e-mail').val();
+  let role = $('.role:checked').val()
+
+
+  $.ajax({
+    url: `https://rehboxhealth.herokuapp.com/v1/join-waitlist`,
+    method: "POST",
+    data: {fullname, email, role},
+    success: function(data){
+      $('.register').trigger("reset")
+      success(data.message)
+    },
+    error: function(jqXHR, exception) {
+      if (jqXHR.status === 0) {
+        error('Not connect.\n Verify Network.');
+      } else if (jqXHR.status == 404) {
+        error('An Error Occured!, Try Again[404].');
+      } else if (jqXHR.status == 500) {
+        error('An Error Occured!, Try Again[500].');
+      } else if (exception === 'parsererror') {
+        error('Requested JSON parse failed.');
+      } else if (exception === 'timeout') {
+        error('Time out error.');
+      } else if (exception === 'abort') {
+        error('Ajax request aborted.');
+      } else {
+        let message = JSON.parse(jqXHR.responseText)
+        error(message.message);
+      }
+    }
+  })
+})
+
+/* End */
