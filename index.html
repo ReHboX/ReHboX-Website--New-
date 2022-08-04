@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Rehbox - Move freely! Live again</title>
     <link rel="stylesheet" href="css/main.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.css"/>
     <!-- Global site tag (gtag.js) - Google Analytics -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=UA-236066719-1"></script>
 <script>
@@ -307,25 +308,26 @@
               Sign Up and Get our
               <span class="two-weeks__span">free 2 weeks</span> exercise plan
             </h2>
-            <form name="register" method="POST">
+            <form name="register" method="POST" class="register">
               <div class="w-cbox">
                 <div class="w-cbox-item">
-                  <input type="checkbox" name="physio" id="physio" />
-                  <label for="physio" class="physio-text">Physiotherapist</label
+                  <input type="radio" name="role" class='role' id="physio-radio" value="physiotherapist"/>
+                  <label for="physio-radio" class="physio-text">Physiotherapist</label
                   ><br />
                 </div>
                 <div class="w-cbox-item">
-                  <input type="checkbox" name="client" id="client" />
-                  <label for="client" class="cleint-text">Client </label><br />
+                  <input type="radio" name="role" class="role" id="client-radio" value="user"/>
+                  <label for="client-radio" class="cleint-text">Client </label><br />
                 </div>
+
               </div>
               <div class="register-info">
                 <div class="firstName-container">
-                  <label for="firstName" class="firstname">First Name</label
+                  <label for="fullname" class="firstname">Full Name</label
                   ><br />
                   <input
                     type="text"
-                    name="firstName"
+                    name="fullname"
                     id="name"
                     required
                   /><br />
@@ -429,8 +431,10 @@
       <div class="all-rights">
         <p>@2022 RehboX. All rights reserved</p>
       </div>
-    </footer> 
+    </footer>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
     <script src="https://unpkg.com/phosphor-icons"></script>
+    <script src='https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js'></script>
     <script src="javascript/script.js"></script>
   </body>
 </html>
