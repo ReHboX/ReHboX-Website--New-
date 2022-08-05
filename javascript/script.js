@@ -104,7 +104,7 @@ $('.submit-contact').click(function(e) {
     method: "POST",
     data: {name, email, message},
     success: function (data) {
-      $('.connect').trigger("reset")
+      $('.submit-contact').trigger("reset")
       $('.submit-contact').attr('disabled', false)
       success(data.message)
     },
