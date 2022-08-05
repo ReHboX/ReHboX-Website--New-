@@ -105,7 +105,7 @@ $('.submit-contact').click(function(e) {
     data: {name, email, message},
     success: function (data) {
       $('.submit-contact').trigger("reset")
-      $('.submit-contact').attr('disabled', false)
+      $('.contact-form').attr('disabled', false)
       success(data.message)
     },
     error: function (jqXHR, exception) {
