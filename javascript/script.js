@@ -71,10 +71,10 @@ $('.submit-plan').click(function(e){
     error: function(jqXHR, exception) {
       if (jqXHR.status === 0) {
         error('Not connect.\n Verify Network.');
-      } else if (jqXHR.status == 404) {
+      } else if (jqXHR.status === 404) {
         error('An Error Occured!, Try Again[404].');
-      } else if (jqXHR.status == 500) {
-        error('An Error Occured!, Try Again[500].');
+      } else if (jqXHR.status === 500) {
+        error('An Error xOccurred!, Try Again[500].');
       } else if (exception === 'parsererror') {
         error('Requested JSON parse failed.');
       } else if (exception === 'timeout') {
@@ -89,4 +89,43 @@ $('.submit-plan').click(function(e){
   })
 })
 
+$('.submit-contact').click(function(e) {
+  e.preventDefault();
+
+  let name = $('#c-name').val();
+  let email = $('#c_e-mail').val();
+  let message = $('#message').val()
+
+  $('.submit-contact').attr('disabled', true)
+
+
+  $.ajax({
+    url: `https://rehbox-contact.herokuapp.com/sendmail`,
+    method: "POST",
+    data: {name, email, message},
+    success: function (data) {
+      $('.connect').trigger("reset")
+      $('.submit-contact').attr('disabled', false)
+      success(data.message)
+    },
+    error: function (jqXHR, exception) {
+      if (jqXHR.status === 0) {
+        error('Not connect.\n Verify Network.');
+      } else if (jqXHR.status === 404) {
+        error('An Error Occurred!, Try Again[404].');
+      } else if (jqXHR.status === 500) {
+        error('An Error Occured!, Try Again[500].');
+      } else if (exception === 'parsererror') {
+        error('Requested JSON parse failed.');
+      } else if (exception === 'timeout') {
+        error('Time out error.');
+      } else if (exception === 'abort') {
+        error('Ajax request aborted.');
+      } else {
+        let message = JSON.parse(jqXHR.responseText)
+        error(message.message);
+      }
+    }
+  })
+})
 /* End */
