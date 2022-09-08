@@ -6,17 +6,44 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>ReHboX - Move freely! Live again</title>
     <link rel="stylesheet" href="css/main.css" />
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.css"/>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.css"
+    />
     <!-- Global site tag (gtag.js) - Google Analytics -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=UA-236066719-1"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
+    <script
+      async
+      src="https://www.googletagmanager.com/gtag/js?id=UA-236066719-1"
+    ></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag() {
+        dataLayer.push(arguments);
+      }
+      gtag("js", new Date());
 
-  gtag('config', 'UA-236066719-1');
-</script>
+      gtag("config", "UA-236066719-1");
+    </script>
 
+    <script type="module">
+      // Import the functions you need from the SDKs you need
+      import { initializeApp } from "https://www.gstatic.com/firebasejs/9.9.4/firebase-app.js";
+      // TODO: Add SDKs for Firebase products that you want to use
+      // https://firebase.google.com/docs/web/setup#available-libraries
+
+      // Your web app's Firebase configuration
+      const firebaseConfig = {
+        apiKey: "AIzaSyAPs34dx-iUCa6cnYJRzFeRXQIfS6e694Q",
+        authDomain: "rehbox-landing.firebaseapp.com",
+        projectId: "rehbox-landing",
+        storageBucket: "rehbox-landing.appspot.com",
+        messagingSenderId: "675772668436",
+        appId: "1:675772668436:web:7c885b0babd0b87576a501",
+      };
+
+      // Initialize Firebase
+      const app = initializeApp(firebaseConfig);
+    </script>
   </head>
   <body>
     <header>
@@ -46,7 +73,12 @@
               <a href="#about_us" class="nav-list__router">About us</a>
             </li>
             <li class="nav-list__item">
-              <a href="https://medium.com/@rehbox.tech" target="_blank" class="nav-list__router">Blog</a>
+              <a
+                href="https://medium.com/@rehbox.tech"
+                target="_blank"
+                class="nav-list__router"
+                >Blog</a
+              >
             </li>
             <li class="nav-list__item">
               <a href="#sign-up_" class="nav-list__router desktop-register"
@@ -69,7 +101,12 @@
           <a href="#about_us" class="menu-item">About us</a>
         </li>
         <li class="mobile-menu-list">
-          <a href="https://medium.com/@rehbox.tech" target="_blank" class="menu-item">Blog</a>
+          <a
+            href="https://medium.com/@rehbox.tech"
+            target="_blank"
+            class="menu-item"
+            >Blog</a
+          >
         </li>
       </ul>
     </div>
@@ -92,28 +129,27 @@
             <i class="ph-arrow-left-light"></i>
             <br />
             <br />
-              <div class="firstName-container">
-                <label for="firstName" class="c_firstname">Full Name</label
-                ><br />
-                <input
-                        type="text"
-                        name="firstName"
-                        id="c-name"
-                        placeholder="John Doe"
-                        required
-                /><br />
-              </div>
-              <br />
-              <div class="mail-container">
-                <label for="email" class="c_mail">Email</label><br />
-                <input
-                        type="email"
-                        name="email"
-                        id="c_e-mail"
-                        placeholder="johndoe@gmail.com"
-                        required
-                /><br />
-              </div>
+            <div class="firstName-container">
+              <label for="firstName" class="c_firstname">Full Name</label><br />
+              <input
+                type="text"
+                name="firstName"
+                id="c-name"
+                placeholder="John Doe"
+                required
+              /><br />
+            </div>
+            <br />
+            <div class="mail-container">
+              <label for="email" class="c_mail">Email</label><br />
+              <input
+                type="email"
+                name="email"
+                id="c_e-mail"
+                placeholder="johndoe@gmail.com"
+                required
+              /><br />
+            </div>
             <br />
             <div class="textarea-container">
               <label for="message" class="text-message">Leave a message</label
@@ -311,26 +347,34 @@
             <form name="register" method="POST" class="register">
               <div class="w-cbox">
                 <div class="w-cbox-item">
-                  <input type="radio" name="role" class='role' id="physio-radio" value="physiotherapist"/>
-                  <label for="physio-radio" class="physio-text">Physiotherapist</label
+                  <input
+                    type="radio"
+                    name="role"
+                    class="role"
+                    id="physio-radio"
+                    value="physiotherapist"
+                  />
+                  <label for="physio-radio" class="physio-text"
+                    >Physiotherapist</label
                   ><br />
                 </div>
                 <div class="w-cbox-item">
-                  <input type="radio" name="role" class="role" id="client-radio" value="user"/>
-                  <label for="client-radio" class="cleint-text">Client </label><br />
+                  <input
+                    type="radio"
+                    name="role"
+                    class="role"
+                    id="client-radio"
+                    value="user"
+                  />
+                  <label for="client-radio" class="cleint-text">Client </label
+                  ><br />
                 </div>
-
               </div>
               <div class="register-info">
                 <div class="firstName-container">
                   <label for="fullname" class="firstname">Full Name</label
                   ><br />
-                  <input
-                    type="text"
-                    name="fullname"
-                    id="name"
-                    required
-                  /><br />
+                  <input type="text" name="fullname" id="name" required /><br />
                 </div>
                 <div class="mail-container">
                   <label for="email" class="mail">Email</label><br />
@@ -410,9 +454,8 @@
         </div>
 
         <div class="split-view">
-          <img class="blog-img_" src="svgs/images/alex-starnes.svg" alt="" /> 
+          <img class="blog-img_" src="svgs/images/alex-starnes.svg" alt="" />
           <i class="ph-quotes"></i>
-          
         </div>
       </div>
     </section>
@@ -432,9 +475,13 @@
         <p>@2022 RehboX. All rights reserved</p>
       </div>
     </footer>
-    <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+    <script
+      src="https://code.jquery.com/jquery-3.6.0.min.js"
+      integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4="
+      crossorigin="anonymous"
+    ></script>
     <script src="https://unpkg.com/phosphor-icons"></script>
-    <script src='https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js'></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js"></script>
     <script src="javascript/script.js"></script>
   </body>
 </html>
