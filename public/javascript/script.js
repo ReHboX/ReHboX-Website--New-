@@ -60,7 +60,7 @@ $('.submit-plan').click(function(e){
 
 
   $.ajax({
-    url: `https://rehboxhealth.herokuapp.com/v1/join-waitlist`,
+    url: `https://rehbox-waitlist.onrender.com/v1/join-waitlist`,
     method: "POST",
     data: {fullname, email, role},
     success: function(data){
@@ -100,7 +100,7 @@ $('.submit-contact').click(function(e) {
 
 
   $.ajax({
-    url: `https://rehbox-contact.herokuapp.com/sendmail`,
+    url: `https://rehbox-waitlist.onrender.com/sendmail`,
     method: "POST",
     data: {name, email, message},
     success: function (data) {
