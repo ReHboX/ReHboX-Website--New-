@@ -65,8 +65,8 @@ $('.submit-plan').click(function(e){
     data: {fullname, email, role},
     success: function(data){
       $('.register').trigger("reset")
-      $('.submit-plan').attr('disabled', false)
-      success(data.message)
+      $('.submit-plan').attr('disabled', false);
+      success(data.message);
     },
     error: function(jqXHR, exception) {
       if (jqXHR.status === 0) {
